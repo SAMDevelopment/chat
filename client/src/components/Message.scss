@@ -1,0 +1,25 @@
+.message {
+  width: 65%;
+  padding: 18px 20px;
+  border-radius: 20px 20px 20px 0;
+  margin: 10px 0;
+  background: #a4e7d2;
+
+  &.received {
+    align-self: flex-end;
+    border-radius: 20px 20px 0 20px;
+    background: #a4d9f1;
+  }
+}
+
+.message .message-author {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.message .message-text {
+  margin: 0;
+}

@@ -1,0 +1,44 @@
+.username-popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: hsla(0, 0%, 0%, 0.4)
+}
+
+.username-form {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+  padding: 10px 10px;
+  border-radius: 7px;
+  background: #f7f7f7;
+}
+
+.username-popup .username-title {
+  font-size: 16px;
+  margin: 16px 0;
+}
+
+.username-popup .set-username {
+  padding: 8px 15px;
+  border: 0;
+  border-radius: 4px;
+  margin: 16px 0 6px 0;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: white;
+  background: #009688;
+}
+
+.username-popup .username-error {
+  font-size: 14px;
+  color: red;
+}

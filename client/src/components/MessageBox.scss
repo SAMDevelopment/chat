@@ -1,0 +1,20 @@
+.message-box {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  padding: 10px 10px;
+  background: #efefef;
+}
+
+.message-box .send-message {
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  opacity: 0.7;
+  cursor: pointer;
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 3px 1px hsla(0, 0%, 0%, 0.6);
+  }
+}
