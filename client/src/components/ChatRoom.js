@@ -14,11 +14,13 @@ class ChatRoom extends Component {
       username: '',
     }
 
+    this.messagesWrapperElement = React.createRef()
+
     socket.on('message', message => {
       this.addMessage(message.text, message.author, message.timestamp)
     })
     socket.on('username', username => {
-      this.setState({ username })
+      this.setState({username})
     })
   }
 
@@ -33,6 +35,8 @@ class ChatRoom extends Component {
     this.setState(oldState => ({
       messages: [...oldState.messages, newMessage],
     }))
+
+    this.messagesWrapperElement.current.scrollTop = this.messagesWrapperElement.current.scrollHeight
   }
 
   render () {
@@ -43,17 +47,19 @@ class ChatRoom extends Component {
     return (
       <div className="chat-room">
 
-        <div className="messages">
-          {this.state.messages.map(message => (
-            <Message
-              key={message.author + '-' + message.timestamp}
-              author={message.author}
-              timestamp={message.timestamp}
-              me={message.me}
-            >
-              {message.text}
-            </Message>
-          ))}
+        <div className="messages-wrapper" ref={this.messagesWrapperElement}>
+          <div className="messages">
+            {this.state.messages.map(message => (
+              <Message
+                key={message.author + '-' + message.timestamp}
+                author={message.author}
+                timestamp={message.timestamp}
+                me={message.me}
+              >
+                {message.text}
+              </Message>
+            ))}
+          </div>
         </div>
 
         <MessageBox disabled={this.state.username === ''}></MessageBox>
