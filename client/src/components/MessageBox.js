@@ -37,6 +37,7 @@ class MessageBox extends Component {
           value={this.state.message}
           inputHandler={this.inputHandler.bind(this)}
           disabled={this.props.disabled}
+          focussed={!this.props.disabled}
         />
 
         <button className="send-message" onClick={this.sendMessage.bind(this)}>

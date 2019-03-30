@@ -45,6 +45,7 @@ class UsernameForm extends Component {
             placeholder="Your username"
             value={this.state.username}
             inputHandler={this.inputHandler.bind(this)}
+            focussed={true}
           />
           {error}
 
